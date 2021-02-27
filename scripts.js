@@ -6,6 +6,17 @@ const TIMEZONE = document.getElementById("TIMEZONE");
 const ISP = document.getElementById("ISP");
 const btnSearch = document.getElementById("btnSearch");
 
+var greenIcon  = L.icon({
+    iconUrl: 'images/icon-location.svg',
+    // shadowUrl: 'leaf-green.png',
+
+    iconSize:     [38, 45], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+
 function showMap(lat = 51.505, lng = -0.09) {
   mymap.setView([lat, lng], 13);
   L.tileLayer(
@@ -21,6 +32,9 @@ function showMap(lat = 51.505, lng = -0.09) {
         "pk.eyJ1IjoiYWxleGFuZHJvbXVuZXJhIiwiYSI6ImNrbG1wbGdubDBhMTEyd21mM2lna3Qxc3UifQ.XdvkjwazuNH2fHk3zYYAWg",
     }
   ).addTo(mymap);
+  // L.marker([lat, lng]).addTo(mymap);
+  L.marker([lat, lng], {icon: greenIcon}).addTo(mymap);
+
 }
 
 function getData(IP = "") {
