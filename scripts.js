@@ -18,7 +18,7 @@ var greenIcon  = L.icon({
 });
 
 function showMap(lat = 51.505, lng = -0.09) {
-  mymap.setView([lat, lng], 13);
+  mymap.setView([lat, lng], 15);
   L.tileLayer(
     "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
     {
